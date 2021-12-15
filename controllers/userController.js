@@ -7,9 +7,11 @@ const bcryptjs = require('bcryptjs')
 const createUser = async (req, res = response) => {
 
 
-    const { email, password } = req.body
+    const { password } = req.body
 
     const username = req.body.username.toLowerCase()
+
+    const email = req.body.email.toLowerCase()
 
     const user = await new User({ username, email, password })
 
